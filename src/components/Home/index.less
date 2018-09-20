@@ -1,0 +1,71 @@
+@import "../../styles/common.less";
+
+.home {
+  background: url("../../../static/img/home-bg.jpg") no-repeat;
+  background-size: cover;
+  .finger {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 1.55rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    //animation: tada 1s linear infinite;
+    background: url("../../../static/img/finger.png") no-repeat;
+    background-size: cover;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .notice-button {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 1.4rem;
+    width: 1rem;
+    height: 1rem;
+    animation: tap 1s linear infinite;
+    background: url("../../../static/img/light.png") no-repeat;
+    background-size: cover;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+@keyframes tada {
+  0% {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    display: none;
+  }
+  10%, 20% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    display: block;
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    display: none;
+  }
+  40%, 60%, 80% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    display: block;
+  }
+  100% {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    display: none;
+  }
+}
+
+@keyframes tap {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

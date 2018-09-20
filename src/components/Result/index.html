@@ -1,0 +1,16 @@
+<div class="full-page result" >
+  <div id="target" class="target">
+    <div class="topic-detail" >
+      <img  :src="imgUrl" class="realImg">
+      <img  :src="postImgUrl" class="postImgUrl">
+      <img  :src="receiveImgUrl" class="receiveImgUrl">
+    </div>
+    <div class="name">{{dreamObj.userName | processWord('name') }}</div>
+    <p class="dream-area">{{dreamObj.dream | processWord('dream')}}</p>
+  </div>
+  <img id='full-img' :src="img" class="preview-img" />
+  <div class="share-button" @click.prevent.stop="onShare"></div>
+  <div class="long-press-button"></div>
+  <div class="mask" v-if="showShare" @click="onShare"></div>
+  <div class="share"  v-if="showShare" @click="onShare"></div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>写给100天后的你</title>
+  <!--lib-->
+  <script src="//shared.ydstatic.com/js/zepto/1.1.6.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7c696beff44e0e0a1ec9ae2e0eff10f4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+<!--分享-->
+<script src="//shared.ydstatic.com/js/ydk/ydk-1.4.4-min.js"></script>
+<script>
+  var host = (location.origin + location.pathname).split('#')[0].replace(/index(\d)?\.html/, '');
+  var link = (location.origin + location.pathname).split('#')[0];
+  ydk.config({
+    debug: false,
+    jsApiList: ['checkJsApi', 'share', 'downloadImage', 'uploadImage', 'previewImage', 'chooseImage']
+  });
+  ydk.share({
+    type: 'wechat',
+    title: '我给100天后的自己写了一封明信片',
+    desc: '你也来写一封吧',
+    imgUrl: host + '/static/img/little-share.jpeg',
+    //     imgUrl: 'http://shared.ydstatic.com/dict/market/wdgkt/static/img/little-share.jpeg',
+    link: link,
+    shift: true,
+    success: function () {
+      $('.share-page').addClass('hidden').removeClass('visibility')
+    }
+  })
+</script>
+
+</html>

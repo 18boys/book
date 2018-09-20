@@ -1,0 +1,26 @@
+<div class="full-page select">
+  <div class="province">{{province}}</div>
+  <div class="provinceButton" @click="onclickFrameSelect('province')"></div>
+  <div class="year">{{year}}</div>
+  <div class="yearButton" @click="onclickFrameSelect('year')"></div>
+  <div class="like" :class="{ checked: select === 'like' }"></div>
+  <div class="like-button" @click="clickSelected('like')"></div>
+  <div class="wenke" :class="{ checked: select === 'wenke' }"></div>
+  <div class="wenke-button" @click="clickSelected('wenke')"></div>
+  <input class="name" v-model="userName">
+  <div class="lookup-Button" @click="onclickButton"></div>
+  <div class="mask" v-if="isShowBigFrame" @click="onclickCancelSelect"></div>
+  <div class="big-frame" v-if="isShowBigFrame">
+    <div class="cancel" @click="onclickCancelSelect"></div>
+    <div class="select-list">
+      <div v-for="(item ,index) in list"
+           :key="index"
+           class="select-item"
+           @click="onclickItem(item)"
+      >{{item}}
+      </div>
+    </div>
+  </div>
+  <!--<div v-if="error" class="error">{{error}}</div>-->
+</div>
+

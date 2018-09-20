@@ -1,0 +1,57 @@
+<div
+    class="full-page dream"
+>
+  <div
+      class="flip-title-select"
+      :class="{ 'flip-title-select-after': isClick}"
+  >
+  </div>
+  <div
+      class="flip-title-write"
+      :class="{ 'flip-title-write-after': isClick}"
+  >
+  </div>
+  <div
+      class="flip-box post-one"
+      :class="{ 'is-click': isClick && index === 1,'is-click-not': isClick && index !== 1,'is-click-to-right': isClickToRight}"
+  >
+    <div class="flip-item flip-item-front postcard-one" @click.stop="onclickPostcard(1)"></div>
+    <div class=" flip-item flip-item-back"></div>
+  </div>
+
+
+  <div
+      class="flip-box post-two"
+      :class="{ 'is-click': isClick && index === 2,'is-click-not': isClick && index !== 2,'is-click-to-right': isClickToRight}"
+  >
+    <div class="flip-item flip-item-front postcard-two" @click.stop="onclickPostcard(2)"></div>
+    <div class=" flip-item flip-item-back"></div>
+  </div>
+  <div
+      class="flip-box post-three"
+      :class="{ 'is-click': isClick && index === 3,'is-click-not': isClick && index !== 3,'is-click-to-right': isClickToRight}"
+  >
+    <div class="flip-item flip-item-front postcard-three" @click.stop="onclickPostcard(3)"></div>
+    <div class=" flip-item flip-item-back"></div>
+  </div>
+  <input class="name" v-if="isClick && !isClickToRight" v-model="userName" maxlength="15">
+  <textarea class="dream-area"  v-if="isClick && !isClickToRight" v-model="dream" maxlength="50"></textarea>
+
+  <div v-if="isClickToRight">
+    <input class="province" v-model="province" maxlength="15">
+    <input class="city" v-model="city" maxlength="15">
+    <input class="county" v-model="county" maxlength="15">
+    <textarea class="address-detail" v-model="address" maxlength="100"></textarea>
+    <input class="mobile" v-model="mobile" maxlength="11" type='tel'>
+  </div>
+
+  <div class="commit-button" @click="onclickButton" v-if="isClick"></div>
+
+  <div v-if="isShowAlert" @click="clickMash">
+    <div class="mask"></div>
+    <div class="alert">
+         <div class="alert-text">{{alertText}}</div>
+    </div>
+  </div>
+
+</div>

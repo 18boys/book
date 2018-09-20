@@ -1,0 +1,9 @@
+<div class="full-page address">
+  <input class="province" v-model="province" maxlength="15">
+  <input class="city" v-model="city" maxlength="15">
+  <input class="county" v-model="county" maxlength="15">
+  <textarea class="address-detail" v-model="address" maxlength="100" placeholder="请输入详细地址,不超过100字..."></textarea>
+  <input class="mobile" v-model="mobile" maxlength="11" type='tel'>
+  <div class="commit-button" @click="onclickButton"></div>
+</div>
+
