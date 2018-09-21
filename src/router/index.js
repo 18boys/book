@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Loading from '@/components/Loading/index.vue'
-import Load from '@/components/Load/index.vue'
 import Home from '@/components/Home/index.vue'
 import DreamPre from '@/components/DreamPre/index.vue'
 import DreamPreX from '@/components/DreamPreX/index.vue'
@@ -20,11 +19,6 @@ export default new Router({
       path: '/',
       name: 'Loading',
       component: Loading
-    },
-    {
-      path: '/Load',
-      name: 'Load',
-      component: Load
     },
     {
       path: '/loading',

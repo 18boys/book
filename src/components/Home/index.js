@@ -28,6 +28,6 @@ export default {
     $('.notice-button')[0].addEventListener('touchend', () => {
       if (timer) clearTimeout(timer);
     });
-    this.$store.commit('updateGlobleObj', { isShowLoading: false });
+
   }
 };

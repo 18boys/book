@@ -21,7 +21,7 @@ export default new Vuex.Store({
       mobile: '',
     },
     globleObj: {
-      isShowLoading: true,
+      isShowLoading: false,
     },
   },
   mutations: {

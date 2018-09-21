@@ -108,7 +108,7 @@
   .music-bg-open {
     background: url("../static/img/mu-open.png") no-repeat;
     background-size: cover;
-    animation: rotate 2s linear infinite;
+    animation: rotateZ 2s linear infinite;
   }
 
   .music-bg-close {
@@ -131,7 +131,7 @@
     width: 0.44rem;
     height: 0.52rem;
     margin: 0.11rem;
-    animation: rotate infinite 2s;
+    animation: rotateY infinite 2s;
   }
 
   .process {
@@ -158,7 +158,7 @@
     font-size: 12px;
   }
 
-  @keyframes rotate {
+  @keyframes rotateY {
     0% {
       transform: rotateY(0);
     }
@@ -173,6 +173,15 @@
     }
     100% {
       transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes rotateZ {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 </style>
