@@ -2,7 +2,8 @@ let timer = '';
 export default {
   data() {
     return {
-      "wrapperAnimate": false,
+      wrapperAnimate: false,
+      bigAnimate: false,
     };
   },
   methods: {
@@ -11,16 +12,16 @@ export default {
     },
   },
   mounted() {
-    // setTimeout(() => {
-    //   var screenWidth = document.body.clientWidth,
-    //     screenHeight = document.body.clientHeight,
-    //     originWidth = 375,
-    //     originHeight = 604;
-    //   $('#app').css({
-    //     '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
-    //     transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
-    //   });
-    // }, 1000)
+    setTimeout(() => {
+      var screenWidth = document.body.clientWidth,
+        screenHeight = document.body.clientHeight,
+        originWidth = 375,
+        originHeight = 604;
+      $('#app').css({
+        '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
+        transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
+      });
+    }, 1000)
     // $('.notice-button')[0].addEventListener('touchstart', (e) => {
     //   e.preventDefault();
     //   timer = setTimeout(() => {
@@ -32,6 +33,12 @@ export default {
     // });
     setTimeout(() => {
       this.wrapperAnimate = true;
+      this.bigAnimate = true;
+      // setTimeout(() => {
+      //   this.bigAnimate = true;
+      // }, 1000)
     }, 1000)
+
+
   }
 };
