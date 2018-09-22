@@ -1,7 +1,9 @@
 let timer = '';
 export default {
   data() {
-    return {};
+    return {
+      "wrapperAnimate": false,
+    };
   },
   methods: {
     onclickNoticeButton() {
@@ -19,15 +21,17 @@ export default {
     //     transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
     //   });
     // }, 1000)
-    $('.notice-button')[0].addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      timer = setTimeout(() => {
-        this.onclickNoticeButton();
-      }, 800)
-    });
-    $('.notice-button')[0].addEventListener('touchend', () => {
-      if (timer) clearTimeout(timer);
-    });
-
+    // $('.notice-button')[0].addEventListener('touchstart', (e) => {
+    //   e.preventDefault();
+    //   timer = setTimeout(() => {
+    //     this.onclickNoticeButton();
+    //   }, 800)
+    // });
+    // $('.notice-button')[0].addEventListener('touchend', () => {
+    //   if (timer) clearTimeout(timer);
+    // });
+    setTimeout(() => {
+      this.wrapperAnimate = true;
+    }, 1000)
   }
 };

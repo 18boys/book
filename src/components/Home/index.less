@@ -16,14 +16,52 @@
   }
   .first-page {
     position: absolute;
-    bottom: 1.45rem;
-    left: -1.5rem;
-    width: 2.5rem;
+    bottom: 1.57rem;
+    left: 0.79rem;
+    width: 2.4rem;
+    height: 3.4rem;
+    transform-style: preserve-3d;
+    transform-origin: 0 0 0;
+    transform: rotateZ(-7deg);
+    //animation: wrapper 6s ease-in-out 1;
+    transition: all ease-in-out 4s ;
+    div {
+      transform-origin: 0 100%;
+      transform-style: preserve-3d;
+    }
+  }
+
+  .wrapper-animate {
+    transform: rotateZ(-7deg) rotateY(180deg);
+  }
+
+  @keyframes wrapper {
+    100% {
+      transform: rotateZ(-7deg) rotateY(180deg);
+    }
+  }
+  .first-page-front {
+    position: absolute;
+    //bottom: 1.8rem;
+    //left: 0.98rem;
+    width: 2.4rem;
+    height: 3.4rem;
+    background: url("../../../static/img/firse-normal.png") no-repeat;
+    background-size: cover;
+    //transform: rotateZ(-7deg);
+  }
+  .first-page-back {
+    position: absolute;
+    //bottom: 1.45rem;
+    //left: -1.5rem;
+    width: 2.4rem;
     height: 3.4rem;
     //animation: tap 1s linear infinite;
     background: url("../../../static/img/first-converse.png") no-repeat;
     background-size: cover;
-    transform: rotateZ(-7deg);
+    //transform: rotateZ(-7deg);
+    transform: rotateY(0.1deg);
+    transform-origin: 100% 0;
   }
 }
 
