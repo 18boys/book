@@ -4,12 +4,17 @@ export default {
     return {
       wrapperAnimate: false,
       bigAnimate: false,
+      pageNum: 0,
     };
   },
   methods: {
     onclickNoticeButton() {
       this.$router.push('homePost');
     },
+    trigWrap(number) {
+      $(`.page${number}`).addClass('wrapper-animate');
+      this.pageNum = number + 1;
+    }
   },
   mounted() {
     setTimeout(() => {
@@ -34,9 +39,9 @@ export default {
     setTimeout(() => {
       this.wrapperAnimate = true;
       this.bigAnimate = true;
-      // setTimeout(() => {
-      //   this.bigAnimate = true;
-      // }, 1000)
+      setTimeout(() => {
+        this.pageNum = 1;
+      }, 2000)
     }, 1000)
 
 

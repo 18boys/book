@@ -3,13 +3,51 @@
       class="book"
       :class="{'big-animate' : bigAnimate}"
   >
+
     <div
-        class="first-page"
-        :class="{'wrapper-animate' : wrapperAnimate}"
+        class="flip-page face-page"
+        :class="{'wrapper-animate' : wrapperAnimate,'current-page': pageNum == 0}"
     >
-      <div class="first-page-front"></div>
-      <div class="first-page-back"></div>
+      <div class="page-contain face-front"></div>
+      <div class="page-contain face-back"></div>
     </div>
+
+    <div
+        class="flip-page  page1"
+        :class="{'normal-page' : bigAnimate, 'current-page': pageNum >= 1}"
+        @click="trigWrap(1)"
+    >
+      <div class="page-contain page1-front">
+        <div v-if="bigAnimate" style="height: 100%;">
+          <div class="text text-1"></div>
+          <div class="text text-2"></div>
+          <div class="text text-3"></div>
+          <div class="text text-4"></div>
+        </div>
+      </div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
+
+    <div
+        class="flip-page  page2"
+        :class="{'normal-page' : bigAnimate, 'current-page': pageNum >=2}"
+        @click="trigWrap(2)"
+    >
+      <div class="page-contain page1-front" v-if="bigAnimate"></div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
+
+    <div
+        class="flip-page  page3"
+        :class="{'normal-page' : bigAnimate, 'current-page': pageNum >=3}"
+        @click="trigWrap(3)"
+    >
+      <div class="page-contain page1-front" v-if="bigAnimate"></div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
   </div>
 
 </div>
