@@ -97,6 +97,15 @@
 </script>
 
 <style>
+
+  @font-face {
+    font-family: 'FZZJ';
+    src: url('../static/font/FZZJ-XSS.ttf');
+  }
+
+  #app {
+    font-family: "FZZJ", "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif !important;
+  }
   .music-bg {
     position: absolute;
     right: 0.1rem;

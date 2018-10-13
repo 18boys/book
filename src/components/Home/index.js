@@ -26,24 +26,14 @@ export default {
         '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
         transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
       });
-    }, 1000)
-    // $('.notice-button')[0].addEventListener('touchstart', (e) => {
-    //   e.preventDefault();
-    //   timer = setTimeout(() => {
-    //     this.onclickNoticeButton();
-    //   }, 800)
-    // });
-    // $('.notice-button')[0].addEventListener('touchend', () => {
-    //   if (timer) clearTimeout(timer);
-    // });
+    }, 1000);
     setTimeout(() => {
       this.wrapperAnimate = true;
       this.bigAnimate = true;
       setTimeout(() => {
         this.pageNum = 1;
-      }, 2000)
+        $('.home-text').addClass('text-all-height');
+      }, 1000)
     }, 1000)
-
-
   }
 };
