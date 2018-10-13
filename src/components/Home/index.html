@@ -11,7 +11,44 @@
       <div class="page-contain face-front"></div>
       <div class="page-contain face-back"></div>
     </div>
-    <!--@click.stop="trigWrap(1)"-->
+
+
+    <!--页面底页-->
+    <div
+        class="flip-page  page"
+        :class="{'normal-page' : bigAnimate }"
+    >
+      <div class="page-contain page2-front" v-if="bigAnimate">
+      </div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
+    <!--页面一-->
+    <div
+        class="flip-page  page3"
+        :class="{'normal-page' : bigAnimate}"
+        @click="trigWrap(3)"
+    >
+      <div class="page-contain page3-front" v-if="bigAnimate">
+        <!--333333-->
+      </div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
+    <!--页面二-->
+    <div
+        class="flip-page  page2"
+        :class="{'normal-page' : bigAnimate }"
+        @click="trigWrap(2)"
+    >
+      <div class="page-contain page2-front" v-if="bigAnimate">
+        <!--22222222-->
+      </div>
+      <div class="page-contain page1-back"></div>
+    </div>
+
+
+    <!--首页"-->
     <div
         class="flip-page  page1"
         :class="{'normal-page' : bigAnimate, 'current-page': pageNum >= 1}"
@@ -29,27 +66,8 @@
       <div class="page-contain page1-back"></div>
     </div>
 
-
-    <div
-        class="flip-page  page2"
-        :class="{'normal-page' : bigAnimate, 'current-page': pageNum >=2}"
-        @click="trigWrap(2)"
-    >
-      <div class="page-contain page1-front" v-if="bigAnimate"></div>
-      <div class="page-contain page1-back"></div>
-    </div>
-
-
-    <div
-        class="flip-page  page3"
-        :class="{'normal-page' : bigAnimate, 'current-page': pageNum >=3}"
-        @click="trigWrap(3)"
-    >
-      <div class="page-contain page1-front" v-if="bigAnimate"></div>
-      <div class="page-contain page1-back"></div>
-    </div>
-
   </div>
+
 
 </div>
 

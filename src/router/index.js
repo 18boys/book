@@ -18,11 +18,6 @@ export default new Router({
       component: Loading
     },
     {
-      path: '/loading',
-      name: 'Loading',
-      component: Loading
-    },
-    {
       path: '/home',
       name: 'Home',
       component: Home
