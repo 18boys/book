@@ -47,7 +47,25 @@ export const pageConfig = [
     ],
   },
   {
-    background: "question3.png"
+    background: "question3.png",
+    selectList: [
+      {
+        left: '0.26rem',
+        top: '1.55rem',
+      },
+      {
+        left: '0.26rem',
+        top: '1.91rem',
+      },
+      {
+        left: '0.26rem',
+        top: '2.36rem',
+      },
+      {
+        left: '0.26rem',
+        top: '2.74rem;',
+      }
+    ],
   },
   {
     background: "question4.png"

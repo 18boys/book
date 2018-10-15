@@ -22,11 +22,13 @@ export default {
       if (isClick) return;
       isClick = true;
       const currentPageConfig = pageConfig[pageConfigIndex];
+      let prePageConfig = pageConfigIndex > 0 ? pageConfig[pageConfigIndex - 1] : '';
       console.log('pageConfigIndex', pageConfigIndex, currentPageConfig, number)
       const selectDom = this.renderSelect(currentPageConfig.selectList);
       console.log("selectDom", selectDom);
       // 判断点击元素
-      if (e.target.classList[0] === 'select' && currentPageConfig.selectList) {
+      if (e.target.classList[0] !== 'select' && e.target.classList[0] !== 'start-button') return;
+      if (e.target.classList[0] === 'select' && prePageConfig.selectList) {
         // const order = e.target.classList[1].substr(6, 1);
         // console.log("order", order,e.target)
         // const position = currentPageConfig.selectList[order];
@@ -52,6 +54,8 @@ export default {
         }, 2000);
       }
       if (number === 3) {
+        // isClick = false;
+        // return;
         $('.page3').css({ 'z-index': 10000 }).addClass('wrapper-animate');
         setTimeout(() => {
           $(`.page2`).css({ 'z-index': 9999 }).show().find('#page2-content').css({
@@ -66,7 +70,7 @@ export default {
       setTimeout(() => {
         isClick = false;
         pageConfigIndex = pageConfigIndex + 1;
-      }, 2000)
+      }, 1000)
     },
     renderSelect(selectList) {
       if (!selectList) return '';
