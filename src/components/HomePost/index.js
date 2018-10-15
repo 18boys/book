@@ -1,4 +1,4 @@
-require('@lib/js.fullpage')
+// require('@lib/js.fullpage')
 
 export default {
   data() {

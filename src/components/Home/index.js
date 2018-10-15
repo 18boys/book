@@ -10,47 +10,54 @@ export default {
     return {
       wrapperAnimate: false,
       bigAnimate: false,
+      isShow2Sign: false,  // 是否展示勾
+      isShow3Sign: false,  // 是否展示勾
     };
   },
   methods: {
     onclickNoticeButton() {
       this.$router.push('homePost');
     },
-    trigWrap(number) {
+    trigWrap(e, number) {
       if (isClick) return;
       isClick = true;
       const currentPageConfig = pageConfig[pageConfigIndex];
       console.log('pageConfigIndex', pageConfigIndex, currentPageConfig, number)
+      const selectDom = this.renderSelect(currentPageConfig.selectList);
+      console.log("selectDom", selectDom);
+      // 判断点击元素
+      if (e.target.classList[0] === 'select' && currentPageConfig.selectList) {
+        // const order = e.target.classList[1].substr(6, 1);
+        // console.log("order", order,e.target)
+        // const position = currentPageConfig.selectList[order];
+        $(e.target).html(`<img src='${host}/static/img/gou.png' class='gou-sign'/>`)
+      }
       if (number === 1) {
         $(`.page1`).addClass('wrapper-animate');
         $('#page2-content').css({
           background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
           'background-size': 'cover',
-        });
+        }).html(selectDom);
       }
       if (number === 2) {
         $('.page2').css({ 'z-index': 10000 }).addClass('wrapper-animate');
-        // $('.page3').show().find('#page3-content').css({
-        //   background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
-        //   'background-size': 'cover',
-        // });
         setTimeout(() => {
           $(`.page3`).css({ 'z-index': 9999 }).show().find('#page3-content').css({
             background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
             'background-size': 'cover',
-          });
+          }).html(selectDom);
         }, 1000);
         setTimeout(() => {
           $(`.page2`).hide().removeClass('wrapper-animate').css({ 'z-index': 0 });
         }, 2000);
       }
-      if ( number === 3) {
+      if (number === 3) {
         $('.page3').css({ 'z-index': 10000 }).addClass('wrapper-animate');
         setTimeout(() => {
           $(`.page2`).css({ 'z-index': 9999 }).show().find('#page2-content').css({
             background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
             'background-size': 'cover',
-          });
+          }).html(selectDom);
         }, 1000);
         setTimeout(() => {
           $(`.page3`).hide().removeClass('wrapper-animate').css({ 'z-index': 0 });
@@ -61,6 +68,12 @@ export default {
         pageConfigIndex = pageConfigIndex + 1;
       }, 2000)
     },
+    renderSelect(selectList) {
+      if (!selectList) return '';
+      return selectList.reduce((acc, item, index) => {
+        return `${acc}<div class='select select${index}' style="left:${item.left};top:${item.top}"></div>`
+      }, '')
+    }
   },
   mounted() {
     page2Dom = $('#page2-content');
