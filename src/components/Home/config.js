@@ -5,7 +5,7 @@
 
 export const pageConfig = [
   {
-    background: "question1.png",
+    background: "q1.png",
     selectList: [
       {
         left: '0.26rem',
@@ -26,7 +26,7 @@ export const pageConfig = [
     ],
   },
   {
-    background: "question2.png",
+    background: "q2.png",
     selectList: [
       {
         left: '0.26rem',
@@ -47,7 +47,7 @@ export const pageConfig = [
     ],
   },
   {
-    background: "question3.png",
+    background: "q3.png",
     selectList: [
       {
         left: '0.26rem',
@@ -67,33 +67,38 @@ export const pageConfig = [
       }
     ],
   },
-  {
+  [
+    {
     background: "question4.png"
-  },
-  {
-    background: "question5.png"
-  },
-  {
-    background: "question6.png"
-  },
-  {
-    background: "question7.png"
-  },
+    },
+    {
+      background: "question5.png"
+    },
+    {
+      background: "question6.png"
+    },
+    {
+      background: "question7.png"
+    },
+  ],
   {
     background: "question8.png"
   },
-  {
-    background: "question9.png"
-  },
-  {
-    background: "question10.png"
-  },
-  {
-    background: "question11.png"
-  },
-  {
-    background: "question12.png"
-  },
+  [
+    {
+      background: "question9.png"
+    },
+    {
+      background: "question10.png"
+    },
+    {
+      background: "question11.png"
+    },
+    {
+      background: "question12.png"
+    },
+  ],
+
   {
     background: "question13.png"
   },

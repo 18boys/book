@@ -54,8 +54,6 @@ export default {
         }, 2000);
       }
       if (number === 3) {
-        // isClick = false;
-        // return;
         $('.page3').css({ 'z-index': 10000 }).addClass('wrapper-animate');
         setTimeout(() => {
           $(`.page2`).css({ 'z-index': 9999 }).show().find('#page2-content').css({
