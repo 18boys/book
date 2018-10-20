@@ -16,16 +16,15 @@ export default {
   },
   methods: {
     onclickNoticeButton() {
-      this.$router.push('homePost');
+      this.$router.push('result');
     },
     trigWrap(e, number) {
       if (isClick) return;
       isClick = true;
-      console.log(e)
       const currentPageConfig = pageConfig[pageConfigIndex];
       let prePageConfig = pageConfigIndex > 0 ? pageConfig[pageConfigIndex - 1] : '';
       console.log('pageConfigIndex', pageConfigIndex, currentPageConfig, number)
-      const selectDom = this.renderSelect(currentPageConfig.selectList);
+      const selectDom = pageConfigIndex < pageConfig.length ? this.renderSelect(currentPageConfig.selectList) : '';
       console.log("selectDom", selectDom);
       // 判断点击元素
       if (e.target.classList[0] !== 'select' && e.target.classList[0] !== 'start-button') return;
@@ -68,6 +67,7 @@ export default {
       }
       setTimeout(() => {
         isClick = false;
+        if (pageConfigIndex >= pageConfig.length) return this.$router.push('result');
         pageConfigIndex = pageConfigIndex + 1;
       }, 1000)
     },
@@ -97,7 +97,6 @@ export default {
       this.wrapperAnimate = true;
       this.bigAnimate = true;
       setTimeout(() => {
-        // this.pageNum = 1;
         $('.face-page').css({
           'z-index': 0,
         });
