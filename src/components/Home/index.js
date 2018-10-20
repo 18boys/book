@@ -21,6 +21,7 @@ export default {
     trigWrap(e, number) {
       if (isClick) return;
       isClick = true;
+      console.log(e)
       const currentPageConfig = pageConfig[pageConfigIndex];
       let prePageConfig = pageConfigIndex > 0 ? pageConfig[pageConfigIndex - 1] : '';
       console.log('pageConfigIndex', pageConfigIndex, currentPageConfig, number)
@@ -36,18 +37,18 @@ export default {
       }
       if (number === 1) {
         $(`.page1`).addClass('wrapper-animate');
-        $('#page2-content').css({
+        $('#page2-content').html(selectDom).css({
           background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
           'background-size': 'cover',
-        }).html(selectDom);
+        });
       }
       if (number === 2) {
         $('.page2').css({ 'z-index': 10000 }).addClass('wrapper-animate');
         setTimeout(() => {
-          $(`.page3`).css({ 'z-index': 9999 }).show().find('#page3-content').css({
+          $(`.page3`).css({ 'z-index': 9999 }).show().find('#page3-content').html(selectDom).css({
             background: `url('${host}/static/img/${currentPageConfig.background}') no-repeat`,
             'background-size': 'cover',
-          }).html(selectDom);
+          });
         }, 1000);
         setTimeout(() => {
           $(`.page2`).hide().removeClass('wrapper-animate').css({ 'z-index': 0 });
@@ -78,6 +79,8 @@ export default {
     }
   },
   mounted() {
+    isClick = false;
+    pageConfigIndex = 0;
     page2Dom = $('#page2-content');
     page3Dom = $('#page3-content');
     setTimeout(() => {
