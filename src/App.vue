@@ -8,7 +8,7 @@
     <div class="music-bg music-bg-open" @click="onClick" v-if="isPlay"></div>
     <div class="music-bg music-bg-close" @click="onClick" v-if="!isPlay"></div>
     <!--<audio id="video-bg" src="/dict/market/wdgkt/static/voice/bgm.mp3" loop autoplay></audio>-->
-    <audio id="video-bg" src="../static/voice/bgm.mp3" loop autoplay></audio>
+    <audio id="video-bg" src="../static/voice/music-bg.mp3" loop autoplay></audio>
     <div class="outer-star" v-if="isShowLoading">
       <img class="star" src="../static/img/star.png" />
     </div>

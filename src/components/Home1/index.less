@@ -11,7 +11,7 @@
     height: 3.5rem;
     background: url("../../../static/img/book.png") no-repeat;
     background-size: cover;
-    transform: rotateZ(-7deg);
+    transform: rotateZ(-7deg) translateZ(0);
     transition: all ease-in-out 2s;
     backface-visibility: hidden;
   }
@@ -26,6 +26,9 @@
       transform-origin: 0 100%;
       transform-style: preserve-3d;
     }
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    z-index: 9000;
   }
   .normal-exam {
     width: 3.2rem;
@@ -63,13 +66,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    //transform: translateZ(0);
+    transform: translateZ(0);
     //overflow: hidden;
   }
   .face-front {
     background: url("../../../static/img/firse-normal.png") no-repeat;
     background-size: cover;
-    //transform: rotateY(0.1deg);
   }
   .face-back {
     background: url("../../../static/img/first-converse.png") no-repeat;
@@ -113,14 +115,14 @@
     width: 2.28rem;
   }
   .home-text {
-    //overflow: hidden;
+    overflow: hidden;
     position: relative;
     top: 0.5rem;
     left: 0.6rem;
     padding-top: 0.5rem;
     height: 0;
     width: 2.4rem;
-    //transition: height 1s linear;
+    transition: height 5s linear;
     //transition: height 8s linear;
   }
 
@@ -160,20 +162,7 @@
     width: 0.25rem;
     height: 0.25rem;
     position: relative;
-    background: chartreuse;
+    //background: chartreuse;
     z-index: inherit;
-  }
-  #magazine {
-    width: 6.4rem;
-    height: 4.75rem;
-    margin-left: -3.2rem;
-  }
-  .magazine-page {
-    .page-content {
-      width: 3rem;
-      height: 4rem;
-      margin-top: 0.3rem;
-      margin-left: 0.1rem;
-    }
   }
 }

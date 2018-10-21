@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-window.jQuery = window.Zepto;
+// window.jQuery = window.Zepto;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
