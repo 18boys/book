@@ -16,6 +16,8 @@ let score = {
 export default {
   data() {
     return {
+      name: 'lishai',
+
       wrapperAnimate: false,
       bigAnimate: false,
     };
@@ -37,16 +39,19 @@ export default {
       })
       console.log('score',score)
     },
+    trigOne() {
+      if (!this.name) return alert('请输入你的名字');
+      $('#magazine').turn('page', 2);
+    },
     trigWrap(e, imgNum) {
       if (isClick) return;
       isClick = true;
-      if (e.target.classList[0] !== 'select' && e.target.classList[0] !== 'start-button') {
+      if (e.target.classList[0] !== 'select') {
         return isClick = false;
       }
       const currentPageConfig = pageConfig[imgNum - 1];
       console.log('e.target.classList[0]', e.target.classList[0], pageConfigIndex, currentPageConfig)
       // 判断点击元素
-      if (e.target.classList[0] === 'start-button') return $('#magazine').turn('page', 2);
       if (e.target.classList[0] === 'select' && currentPageConfig.selectList) {
         const order = e.target.classList[1].substr(6, 1);
         console.log("order", order,);
@@ -55,6 +60,8 @@ export default {
         $(e.target).html(`<img src='${host}/static/img/gou.png' class='gou-sign'/>`)
         setTimeout(() => {
           isClick = false;
+          // $('#magazine').turn('next');
+          // return;
           if (position.jump) return $("#magazine").turn("page", position.jump * 2);
 
           // 最后一页 计算可能角色
@@ -84,16 +91,16 @@ export default {
       hali: 0,
     };
 
-    setTimeout(() => {
-      var screenWidth = document.body.clientWidth,
-        screenHeight = document.body.clientHeight,
-        originWidth = 375,
-        originHeight = 604;
-      $('#app').css({
-        '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
-        transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
-      });
-    }, 1000);
+    // setTimeout(() => {
+    //   var screenWidth = document.body.clientWidth,
+    //     screenHeight = document.body.clientHeight,
+    //     originWidth = 375,
+    //     originHeight = 604;
+    //   $('#app').css({
+    //     '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
+    //     transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
+    //   });
+    // }, 1000);
 
     setTimeout(() => {
       this.wrapperAnimate = true;
@@ -142,7 +149,6 @@ export default {
                   const currentPageConfig = pageConfig[0];
                   const selectDom = this.renderSelect(currentPageConfig.selectList);
                   $(`.p${page + 1} .page-content`).append(selectDom);
-                  // return;
                   return;
                 }
 

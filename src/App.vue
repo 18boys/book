@@ -106,6 +106,15 @@
   #app {
     font-family: "FZZJ", "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif !important;
   }
+  /**{*/
+    /*moz-user-select: -moz-none;*/
+    /*-moz-user-select: none;*/
+    /*-o-user-select:none;*/
+    /*-khtml-user-select:none;*/
+    /*-webkit-user-select:none;*/
+    /*-ms-user-select:none;*/
+    /*user-select:none;*/
+  /*}*/
   .music-bg {
     position: absolute;
     right: 0.1rem;
@@ -149,22 +158,6 @@
     font-size: 0.16rem;
     text-align: center;
     color: #f6d063;
-  }
-
-  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-
-    color: #666;
-    font-size: 12px;
-  }
-
-  input:-moz-placeholder, textarea:-moz-placeholder {
-    color: #666;
-    font-size: 12px;
-  }
-
-  input::-moz-placeholder, textarea::-moz-placeholder {
-    color: #666;
-    font-size: 12px;
   }
 
   @keyframes rotateY {

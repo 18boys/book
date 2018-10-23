@@ -13,33 +13,35 @@
 
     <div id="magazine" style="display: none">
 
-      <div class="magazine-page" @click.stop="(e)=>trigWrap(e,-1)"
+      <div class="magazine-page"
            style="background-image:url('../../../static/img/page1-front.png');  background-size: cover;">
         <div class="home-text text-all-height">
           <div class="text text-1"></div>
           <div class="text text-2"></div>
           <div class="text text-3"></div>
           <div class="text text-4"></div>
-          <input type="text" class="home-input" style="font-family: 'FZZJ'; font-size: 20px" placeholder="请输入你的名字">
-          <div class="start-button"></div>
+          <!--<input type="text" class="home-input" style="font-family: 'FZZJ'; font-size: 20px" maxlength="6" placeholder="请输入你的名字">-->
+          <input type="text" v-model="name" class="home-input"
+                 style="font-family: 'FZZJ', 'Arial', 'Microsoft YaHei', '黑体', '宋体', 'sans-serif'; font-size: 20px"
+                 maxlength="6" placeholder="请输入你的名字">
+          <div class="start-button" @click.stop="trigOne"></div>
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,1)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q1.png');    background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q1.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
 
+
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,2)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q2.png');     background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q2.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
@@ -47,127 +49,138 @@
 
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,3)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q3.png');     background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q3.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,4)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q4.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q4.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
 
+
+
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,5)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q5.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q5.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
 
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,6)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q6.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q6.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,7)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q7.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q7.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,8)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q8.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q8.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,9)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q9.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q9.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,10)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q10.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q10.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,11)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q11.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q11.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,12)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q12.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q12.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,13)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q13.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q13.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,14)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q14.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q14.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
+
+
 
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,15)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q15.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q15.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
            style="background-image:url('../../../static/img/book-back-new.jpg');  background-size: cover;"></div>
 
+
+
       <div class="magazine-page" @click.stop="(e)=>trigWrap(e,16)"
-           style="background-image:url('../../../static/img/book-bg-new.jpg');  background-size: cover;">
-        <div class="page-content"
-             style="background-image:url('../../../static/img/q16.png');      background-size: 100% 100%;">
+           style="background-image:url('../../../static/img/q16.png');   background-size: 100% 100%;">
+        <div class="page-content">
         </div>
       </div>
       <div class="magazine-page"
