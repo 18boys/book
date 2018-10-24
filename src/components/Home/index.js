@@ -6,7 +6,7 @@ let isClick = false;
 let pageConfigIndex = 0;
 let score = {
   eli: 0,
-  xiaowangzi: 0,
+  xiaowang: 0,
   tangji: 0,
   lubin: 0,
   shita: 0,
@@ -16,7 +16,7 @@ let score = {
 export default {
   data() {
     return {
-      name: 'lishai',
+      name: '',
 
       wrapperAnimate: false,
       bigAnimate: false,
@@ -67,7 +67,14 @@ export default {
           // 最后一页 计算可能角色
           const max = this.getMax();
           console.log('max', max);
-          this.$router.push('result');
+          // this.$router.push('result');
+          this.$router.push({
+            path: 'result',
+            query: {
+              max,
+              userName: this.name,
+            }
+          });
         }, 100)
       }
     },
@@ -83,7 +90,7 @@ export default {
     pageConfigIndex = 0;
     score = {
       eli: 0,
-      xiaowangzi: 0,
+      xiaowang: 0,
       tangji: 0,
       lubin: 0,
       shita: 0,

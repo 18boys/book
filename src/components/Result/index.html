@@ -1,4 +1,11 @@
 <div class="full-page result" >
-  <div class="background-img" ></div>
-  <img :src="rNameUrl" class="preview-img" />
+  <div class="background-img" >
+    <img  :src="showImgUrl" class="realImg">
+    <div class="user-name">{{username}}</div>
+  </div>
+
+  <canvas id="canvas" class="preview-img-canvas" ></canvas>
+  <img :src="imgUrl" class="preview-img" />
+  <div class="button goto-button" @click.prevent.stop="onGoto"></div>
+
 </div>
