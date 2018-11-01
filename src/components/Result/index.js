@@ -8,10 +8,21 @@ export default {
   },
   methods: {
     onGoto() {
-      location.href = 'https://ke.youdao.com/wap/?outVendor=wdgkt_gwfw_0605&v=' + new Date().getTime();
+      // location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NzM2MjIxMA%3D%3D&scene=110#wechat_redirect' + new Date().getTime();
+      location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1MzM5MDYwMQ%3D%3D&scene=110#wechat_redirect'
     }
   },
   mounted: async function () {
+    setTimeout(() => {
+      var screenWidth = document.body.clientWidth,
+        screenHeight = document.body.clientHeight,
+        originWidth = 375,
+        originHeight = 604;
+      $('#app').css({
+        '-webkit-transform': 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')',
+        transform: 'scaleX(' + screenWidth / originWidth + ') scaleY(' + screenHeight / originHeight + ')'
+      });
+    }, 1000);
     let { userName = '', max = 'hali' } = this.$route.query;
     this.username = userName;
     if (window.gl_use_name) {

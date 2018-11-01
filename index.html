@@ -28,9 +28,9 @@
       language: (navigator.browserLanguage || navigator.language).toLowerCase()
     };
     var _hmt = _hmt || [];
-    (function () {
+    (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?7c696beff44e0e0a1ec9ae2e0eff10f4";
+      hm.src = "https://hm.baidu.com/hm.js?526b9a24d358fd13a02c2c33f479ed76";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -50,18 +50,21 @@
     debug: false,
     jsApiList: ['checkJsApi', 'share', 'downloadImage', 'uploadImage', 'previewImage', 'chooseImage']
   });
-  ydk.share({
-    type: 'wechat',
-    title: '我给100天后的自己写了一封明信片',
-    desc: '你也来写一封吧',
-    imgUrl: host + '/static/img/little-share.jpeg',
-    //     imgUrl: 'http://shared.ydstatic.com/dict/market/wdgkt/static/img/little-share.jpeg',
-    link: link,
-    shift: true,
-    success: function () {
-      $('.share-page').addClass('hidden').removeClass('visibility')
-    }
-  })
+  window.share=function(img,name){
+    ydk.share({
+      type: 'wechat',
+      title: '测试你是名著里的谁',
+      desc: '穿越进一本书,我竟然是主角'+name+'!快来看看你睡谁?',
+      imgUrl: host + '/static/img/'+img,
+      //     imgUrl: 'http://shared.ydstatic.com/dict/market/wdgkt/static/img/little-share.jpeg',
+      link: link,
+      shift: true,
+      success: function () {
+        $('.share-page').addClass('hidden').removeClass('visibility')
+      }
+    })
+  }
+
 </script>
 
 </html>

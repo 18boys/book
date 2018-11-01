@@ -44,6 +44,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     // assetsPublicPath: '/dict/market/lettertomyself/',
+    // assetsPublicPath: '/market/2018whoareyouinbook',
     assetsPublicPath: '/',
 
     /**

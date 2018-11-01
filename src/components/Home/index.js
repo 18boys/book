@@ -13,6 +13,16 @@ let score = {
   fuer: 0,
   hali: 0,
 };
+
+let namex = {
+  eli: '伊丽莎白',
+  xiaowang: '小王子',
+  tangji: '堂吉柯德',
+  lubin: '鲁宾逊',
+  shita: '罗柏史塔克',
+  fuer: '福尔摩斯',
+  hali: '哈利波特',
+};
 export default {
   data() {
     return {
@@ -32,7 +42,7 @@ export default {
       return max;
     },
     addScore(list=[]) {
-      console.log(list);
+      // console.log(list);
       list.forEach((item) => {
         score[item] = score[item] + 1;
       })
@@ -48,11 +58,11 @@ export default {
         return isClick = false;
       }
       const currentPageConfig = pageConfig[imgNum - 1];
-      console.log('e.target.classList[0]', e.target.classList[0], pageConfigIndex, currentPageConfig)
+      // console.log('e.target.classList[0]', e.target.classList[0], pageConfigIndex, currentPageConfig)
       // 判断点击元素
       if (e.target.classList[0] === 'select' && currentPageConfig.selectList) {
         const order = e.target.classList[1].substr(6, 1);
-        console.log("order", order,);
+        // console.log("order", order,);
         const position = currentPageConfig.selectList[order];
         this.addScore(position.person);
         $(e.target).html(`<img src='${host}/static/img/gou.png' class='gou-sign'/>`)
@@ -64,7 +74,8 @@ export default {
 
           // 最后一页 计算可能角色
           const max = this.getMax();
-          console.log('max', max);
+          window.share(max + '.jpg', namex[max]);
+          // console.log('max', max);
           // this.$router.push('result');
           this.$router.push({
             path: 'result',
@@ -126,7 +137,7 @@ export default {
             elevation: 100, //设置过渡期间页面的高程
             when: {
               turning: (e, page, view) => {
-                console.log('turning', page);
+                // console.log('turning', page);
                 isClick = false;
                 if (page === 1) {
                   return;
@@ -134,7 +145,7 @@ export default {
               },
 
               turned: (e, page) => {
-                console.log('page turned', page);
+                // console.log('page turned', page);
                 if (page === 1) {
                   $('.home-text').addClass('text-all-height');
                   return;
@@ -150,10 +161,10 @@ export default {
 
                 const currentPageConfig = pageConfig[(page / 2) - 1];
                 const selectDom = this.renderSelect(currentPageConfig.selectList);
-                console.log('select配置为', page, currentPageConfig, selectDom, $(`.p${page + 1} .page-content`))
+                // console.log('select配置为', page, currentPageConfig, selectDom, $(`.p${page + 1} .page-content`))
                 $(`.p${page + 1} .page-content`).append(selectDom);
                 pageConfigIndex = page / 2 - 1;
-                console.log('pageConfigIndex', pageConfigIndex)
+                // console.log('pageConfigIndex', pageConfigIndex)
               }
             }
           })

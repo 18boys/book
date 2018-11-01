@@ -141,6 +141,10 @@
     /*-ms-user-select:none;*/
     /*user-select:none;*/
   /*}*/
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
   .music-bg {
     position: absolute;
     right: 0.1rem;
