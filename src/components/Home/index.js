@@ -16,8 +16,7 @@ let score = {
 export default {
   data() {
     return {
-      name: '你的名字',
-
+      name: '',
       wrapperAnimate: false,
       bigAnimate: false,
     };
@@ -37,10 +36,9 @@ export default {
       list.forEach((item) => {
         score[item] = score[item] + 1;
       })
-      console.log('score',score)
     },
     trigOne() {
-      if (!this.name) return alert('请输入你的名字');
+      // if (!this.name) return alert('请输入你的名字');
       $('#magazine').turn('page', 2);
     },
     trigWrap(e, imgNum) {
@@ -75,7 +73,7 @@ export default {
               userName: this.name,
             }
           });
-        }, 100)
+        }, 500)
       }
     },
     renderSelect(selectList) {

@@ -78,10 +78,9 @@
           let gl_use_name = '';
           if (user) {
             user = eval('(' + user + ')');
-            gl_use_name = user.nick_name;
-            alert(gl_use_name)
+            window.gl_use_name = user.nick_name;
           } else {
-            window.location.href = "https://bnbuyk-8080-dlqrjv.dev.ide.live/php/index.php?method=outh";
+            window.location.href = "https://dict.youdao.com/market/2018teacherday/api/index.php?method=outh";
           }
         }
       });
