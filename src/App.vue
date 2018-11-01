@@ -60,6 +60,33 @@
     mounted() {
       this.showPoint();
 
+      function getCookie(sName) {
+        var aCookie = document.cookie.split("; ");
+        for (var i = 0; i < aCookie.length; i++) {
+          var aCrumb = aCookie[i].split("=");
+
+
+          if (encodeURIComponent(sName) == aCrumb[0])
+            return decodeURIComponent(aCrumb[1]);
+        }
+        return null;
+      }
+
+      $(document).ready(function () {
+        if (browser.versions.weixin) { //微信端调用公众号授权接口
+          let user = getCookie('face_user');
+          let gl_use_name = '';
+          if (user) {
+            user = eval('(' + user + ')');
+            gl_use_name = user.nick_name;
+            alert(gl_use_name)
+          } else {
+            window.location.href = "https://bnbuyk-8080-dlqrjv.dev.ide.live/php/index.php?method=outh";
+          }
+        }
+      });
+
+
       function change() {
         var screenWidth = document.body.clientWidth,
           screenHeight = document.body.clientHeight,

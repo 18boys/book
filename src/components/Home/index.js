@@ -16,7 +16,7 @@ let score = {
 export default {
   data() {
     return {
-      name: '',
+      name: '你的名字',
 
       wrapperAnimate: false,
       bigAnimate: false,
@@ -133,21 +133,12 @@ export default {
                 if (page === 1) {
                   return;
                 }
-                // if (page === 2) {
-                //   const currentPageConfig = pageConfig[0];
-                //   const selectDom = this.renderSelect(currentPageConfig.selectList);
-                //   $(`.p${page + 1} .page-content`).append(selectDom);
-                //   return;
-                // }
-                // const currentPageConfig = pageConfig[(page / 2) - 1];
-                // const selectDom = this.renderSelect(currentPageConfig.selectList);
-                // console.log('select配置为', page, currentPageConfig, selectDom, $(`.p${page + 1} .page-content`))
-                // $(`.p${page + 1} .page-content`).append(selectDom);
               },
 
               turned: (e, page) => {
                 console.log('page turned', page);
                 if (page === 1) {
+                  $('.home-text').addClass('text-all-height');
                   return;
                 }
                 if (page === 2) {
