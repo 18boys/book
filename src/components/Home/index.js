@@ -74,7 +74,7 @@ export default {
 
           // 最后一页 计算可能角色
           const max = this.getMax();
-          window.share(max + '.jpg', namex[max]);
+          window.share('little-share-'+max + '.jpg', namex[max]);
           // console.log('max', max);
           // this.$router.push('result');
           this.$router.push({

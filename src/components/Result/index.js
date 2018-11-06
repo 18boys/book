@@ -3,13 +3,19 @@ export default {
     return {
       showImgUrl: '',
       imgUrl: '',
+      lookupUrl: '',
       username: '',
+
+      showShare: false,
     };
   },
   methods: {
     onGoto() {
-      // location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NzM2MjIxMA%3D%3D&scene=110#wechat_redirect' + new Date().getTime();
-      location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1MzM5MDYwMQ%3D%3D&scene=110#wechat_redirect'
+      this.showShare = true;
+      // location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1MzM5MDYwMQ==&scene=110&from=singlemessage&isappinstalled=0#wechat_redirect'
+    },
+    onShare() {
+      this.showShare = !this.showShare;
     }
   },
   mounted: async function () {
@@ -30,6 +36,7 @@ export default {
     }
     const host = `${location.origin}${location.pathname}`.split('#')[0].replace(/index(\d)?\.html/, '');
     this.showImgUrl = `${host}/static/img/${max}.jpg`;
+    this.lookupUrl = `${host}/static/img/lookup-qrcode.jpg`;
     const shareImgUrl = `${host}/static/img/${max}_share.jpg`;
     const qrcodeImgUrl = `${host}/static/img/qrcode.png`;
     const img = new Image;

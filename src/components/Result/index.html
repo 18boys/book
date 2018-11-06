@@ -7,5 +7,11 @@
   <canvas id="canvas" class="preview-img-canvas" ></canvas>
   <img :src="imgUrl" class="preview-img" />
   <div class="button goto-button" @click.prevent.stop="onGoto"></div>
+  <div class="mask" v-if="showShare" @click="onShare"></div>
+  <div class="share" v-if="showShare">
+    <!--<div class="lookup-qrcode"></div>-->
+    <img :src="lookupUrl" class="lookup-qrcode-img">
+    <div class="lookup-text">长按识别二维码,关注此微信公众号</div>
+  </div>
 
 </div>

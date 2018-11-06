@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>写给100天后的你</title>
+  <title>测试你是书中的哪位主角</title>
   <!--lib-->
 
   <!--<script src="//shared.ydstatic.com/js/zepto/1.1.6.js"></script>-->
@@ -22,7 +22,7 @@
         return {							//移动终端浏览器版本信息
           webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
           mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
-          weixin: !!u.match(/micromessenger/i),
+          weixin: !!u.match(/micromessenger/i) && false,
         };
       }(),
       language: (navigator.browserLanguage || navigator.language).toLowerCase()
