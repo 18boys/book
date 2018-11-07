@@ -250,7 +250,7 @@ export const pageConfig = [
       {
         left: '0.45rem',
         top: '2.72rem',
-        jump: 14,
+        jump: 15,
         person:['hali'],
       },
     ],
